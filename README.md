@@ -1,24 +1,39 @@
-# Simple Calculator 🧮
+while True:
+    print("\n--- SIMPLE CALCULATOR ---")
+    print("1. + Add")
+    print("2. - Subtract")
+    print("3. * Multiply")
+    print("4. / Divide")
+    print("5. Exit")
 
-A basic calculator built with Python that performs simple arithmetic operations.
+    choice = input("Choose option: ")
 
-## Features
-- Addition (+)
-- Subtraction (-)
-- Multiplication (*)
-- Division (/)
-- Input validation
-- Error handling for invalid numbers and division by zero
+    if choice == "5":
+        print("Goodbye!")
+        break
 
-## How it works
-The program runs in a loop and lets the user choose an operation, enter two numbers, and see the result. It continues until the user chooses to exit.
+    if choice in ["1", "2", "3", "4"]:
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
 
-## What I learned
-- While loops
-- Conditional statements (if/elif)
-- Handling user input
-- Using float numbers
-- Basic error handling with try/except
+            if choice == "1":
+                print("Result:", num1 + num2)
 
-## How to run
-Run the script in any Python environment (e.g. Pydroid 3 or terminal).
+            elif choice == "2":
+                print("Result:", num1 - num2)
+
+            elif choice == "3":
+                print("Result:", num1 * num2)
+
+            elif choice == "4":
+                if num2 == 0:
+                    print("Error: cannot divide by zero")
+                else:
+                    print("Result:", num1 / num2)
+
+        except ValueError:
+            print("Please enter valid numbers")
+
+    else:
+        print("Invalid option")
